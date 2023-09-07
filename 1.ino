@@ -1,3 +1,6 @@
+// timer code sourced from https://www.youtube.com/watch?v=jacncr5Q0Pc
+
+
 int hh = 0, mm = 0, ss = 0, ms = 0;
 bool timerStart = false;
 String totalTime;
