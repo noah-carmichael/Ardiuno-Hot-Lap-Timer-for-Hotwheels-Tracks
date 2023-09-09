@@ -158,13 +158,19 @@ void loop() {
       String toke1 = tokens[i];
       String toke2 = tokensHigh[i];
       if (index < 3) {
+        if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
+          break;
+        }
         if (toke1.substring(0, 2).toInt() < toke2.substring(0, 2).toInt()) {
           fastestLap = totalTime;
           Serial.println(toke1.substring(0, 2));
           Serial.println(toke2.substring(0, 2));
         }
-        
+
       } else {
+        if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
+          break;
+        }
         if (toke1.substring(0, 3).toInt() < toke2.substring(0, 3).toInt()) {
           fastestLap = totalTime;
           Serial.println(toke1.substring(0, 3));
