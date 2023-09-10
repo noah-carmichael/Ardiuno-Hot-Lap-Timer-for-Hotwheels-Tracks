@@ -1,6 +1,25 @@
 # Ardiuno-Hot-Lap-Timer-for-Hotwheels-Tracks
-A hot lap tracker using an ardiuno with an ultrasonic sensor, LCD display, and buttons
 
-very much a WIP. will update soon
+Ever wanted to find out how fast different diecasts stack up to each other in time attacks?
 
-note: can't have serial monitor open in both ardiuno IDE and your IDE running python at the same time
+This hot lap timer uses an ultrasonic sensor to read passing by cars and records laptimes. The LCD display display the current laptime and the fastest lap. The optional python script creates a .txt file that records every laptime as well as the average laptime.
+How to use:
+1. Set up the Ardiuno according to the schematics below
+2. Find the best place for your ultrasonic sensor and run the code
+
+Inlcuding the optional python code:
+The python script uses the serial monitor to communicate with the ardiuno. Close the serial monitor in your Ardiuno IDE before running the python script
+
+4. Make sure that python is reading the correct COM port on line of the program 3 - you may need to change it
+5. Run the python code. Give the .txt file a name (don't re-use names of already existing files. An example of what this file will look liek is included)
+
+PARTS LIST:
+
+Ardiuno Uno,
+LCD 16x2,
+Potentiometer,
+220 Ohm Resistor,
+Ultrasonic Sensor,
+Pushbutton
+
+![circuit](https://github.com/noah-carmichael/Ardiuno-Hot-Lap-Timer-for-Hotwheels-Tracks/assets/126828296/70d02e8b-dea0-4559-9c50-8c410bf25d83)
