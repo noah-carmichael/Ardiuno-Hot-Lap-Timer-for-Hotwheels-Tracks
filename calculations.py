@@ -1,7 +1,4 @@
 import serial
-import shutil
-import os
-import tempfile
 
 arduino_port = "COM4" # serial port of Arduino, change if necessary
 baud = 9600 # arduino uno runs at 9600 baud

@@ -127,67 +127,67 @@ void loop() {
     Serial.println("RESET");
   }
 
-// check for if a car comes by
+  // check for if a car comes by
   if (distance <= 3) {
-    if (firstRun == true){
+    if (firstRun == true) {
       timerStart = true;
       firstRun = false;
     } else {  // Start stopwatch
-    totalTime = String((hh / 10) % 10) + String(hh % 10) + String(":") + String((mm / 10) % 10) + String(mm % 10) + String(":") + String((ss / 10) % 10) + String(ss % 10) + String(":") + String((ms / 100) % 10) + String((ms / 10) % 10) + String(ms % 10);
-    // Serial.println(totalTime);
-    Serial.println(totalTime);
+      totalTime = String((hh / 10) % 10) + String(hh % 10) + String(":") + String((mm / 10) % 10) + String(mm % 10) + String(":") + String((ss / 10) % 10) + String(ss % 10) + String(":") + String((ms / 100) % 10) + String((ms / 10) % 10) + String(ms % 10);
+      // Serial.println(totalTime);
+      Serial.println(totalTime);
 
-    char charBuf[13];
-    totalTime.toCharArray(charBuf, 13);
+      char charBuf[13];
+      totalTime.toCharArray(charBuf, 13);
 
-    token = strtok(charBuf, delimiter);
+      token = strtok(charBuf, delimiter);
 
-    // Store tokens in the array
-    while (token != NULL && index < 4) {
-      tokens[index] = token;
-      index++;
-      token = strtok(NULL, ":");
-    }
+      // Store tokens in the array
+      while (token != NULL && index < 4) {
+        tokens[index] = token;
+        index++;
+        token = strtok(NULL, ":");
+      }
 
-// for the fastest lap
-    char charCringe[13];
-    fastestLap.toCharArray(charCringe, 13);
-    tokenHigh = strtok(charCringe, delimiter);
-    while (tokenHigh != NULL && index2 < 4) {
-      tokensHigh[index2] = tokenHigh;
-      index2++;
-      tokenHigh = strtok(NULL, ":");
-    }
+      // for the fastest lap
+      char charCringe[13];
+      fastestLap.toCharArray(charCringe, 13);
+      tokenHigh = strtok(charCringe, delimiter);
+      while (tokenHigh != NULL && index2 < 4) {
+        tokensHigh[index2] = tokenHigh;
+        index2++;
+        tokenHigh = strtok(NULL, ":");
+      }
 
-    for (int i = 0; i < index; i++) {
+      for (int i = 0; i < index; i++) {
 
-      String toke1 = tokens[i];
-      String toke2 = tokensHigh[i];
-      if (index < 3) {
-        if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
-          break;
-        }
-        if (toke1.substring(0, 2).toInt() < toke2.substring(0, 2).toInt()) {
-          fastestLap = totalTime;
-          // Serial.println(toke1.substring(0, 2));
-          // Serial.println(toke2.substring(0, 2));
-        }
+        String toke1 = tokens[i];
+        String toke2 = tokensHigh[i];
+        if (index < 3) {
+          if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
+            break;
+          }
+          if (toke1.substring(0, 2).toInt() < toke2.substring(0, 2).toInt()) {
+            fastestLap = totalTime;
+            // Serial.println(toke1.substring(0, 2));
+            // Serial.println(toke2.substring(0, 2));
+          }
 
-      } else {
-        if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
-          break;
-        }
-        if (toke1.substring(0, 3).toInt() < toke2.substring(0, 3).toInt()) {
-          fastestLap = totalTime;
-          // Serial.println(toke1.substring(0, 3));
-          // Serial.println(toke2.substring(0, 3));
+        } else {
+          if (toke1.substring(0, 2).toInt() > toke2.substring(0, 2).toInt()) {
+            break;
+          }
+          if (toke1.substring(0, 3).toInt() < toke2.substring(0, 3).toInt()) {
+            fastestLap = totalTime;
+            // Serial.println(toke1.substring(0, 3));
+            // Serial.println(toke2.substring(0, 3));
+          }
         }
       }
     }
-    }
 
 
-// delay to not detect the car twice
+    // delay to not detect the car twice
     delay(700);
     ms = 700, ss = 0, mm = 0, hh = 0;  // Reset stopwatch
   }
