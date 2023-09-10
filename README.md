@@ -2,7 +2,7 @@
 
 Ever wanted to find out how fast different diecasts stack up to each other in time attacks?
 
-This hot lap timer uses an ultrasonic sensor to read passing by cars and records laptimes. The LCD display display the current laptime and the fastest lap. The optional python script creates a .txt file that records every laptime as well as the average laptime.
+This hot lap timer uses an ultrasonic sensor to read a passing car and record its laptimes. The LCD display display the current laptime and the fastest lap. The optional python script creates a .txt file that records every laptime as well as the average laptime.
 How to use:
 1. Set up the Ardiuno according to the schematics below
 2. Find the best place for your ultrasonic sensor and run the code
