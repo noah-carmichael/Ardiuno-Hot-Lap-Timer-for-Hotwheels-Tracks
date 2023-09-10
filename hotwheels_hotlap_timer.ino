@@ -12,6 +12,7 @@ const int buttonPin = 2;
 int buttonState = 0;
 
 bool resetFastest = true;
+bool firstRun = true;
 
 char* tokens[4];  // Array to store the tokens
 char* tokensHigh[4];
@@ -75,7 +76,6 @@ int text = 0;
 
 void loop() {
   // lcd display stuff
-  timerStart = true;  // Start stopwatch
   lcd.setCursor(0, 0);
   lcd.print("CUR   ");
   lcd.setCursor(4, 0);
@@ -128,7 +128,11 @@ void loop() {
   }
 
 // check for if a car comes by
-  if (distance <= 12) {
+  if (distance <= 3) {
+    if (firstRun == true){
+      timerStart = true;
+      firstRun = false;
+    } else {  // Start stopwatch
     totalTime = String((hh / 10) % 10) + String(hh % 10) + String(":") + String((mm / 10) % 10) + String(mm % 10) + String(":") + String((ss / 10) % 10) + String(ss % 10) + String(":") + String((ms / 100) % 10) + String((ms / 10) % 10) + String(ms % 10);
     // Serial.println(totalTime);
     Serial.println(totalTime);
@@ -180,12 +184,12 @@ void loop() {
         }
       }
     }
-
+    }
 
 
 // delay to not detect the car twice
-    delay(400);
-    ms = 400, ss = 0, mm = 0, hh = 0;  // Reset stopwatch
+    delay(700);
+    ms = 700, ss = 0, mm = 0, hh = 0;  // Reset stopwatch
   }
 }
 
