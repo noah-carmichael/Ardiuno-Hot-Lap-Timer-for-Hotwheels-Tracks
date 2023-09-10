@@ -10,8 +10,8 @@ How to use:
 Inlcuding the optional python code:
 The python script uses the serial monitor to communicate with the ardiuno. Close the serial monitor in your Ardiuno IDE before running the python script
 
-4. Make sure that python is reading the correct COM port on line of the program 3 - you may need to change it
-5. Run the python code. Give the .txt file a name (don't re-use names of already existing files. An example of what this file will look liek is included)
+3. Make sure that python is reading the correct COM port on line of the program 3 - you may need to change it
+4. Run the python code. Give the .txt file a name (don't re-use names of already existing files. An example of what this file will look liek is included)
 
 PARTS LIST:
 
