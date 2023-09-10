@@ -23,3 +23,6 @@ Ultrasonic Sensor,
 Pushbutton
 
 ![circuit](https://github.com/noah-carmichael/Ardiuno-Hot-Lap-Timer-for-Hotwheels-Tracks/assets/126828296/70d02e8b-dea0-4559-9c50-8c410bf25d83)
+
+Video of it in use:
+[![Link to youtube video](https://img.youtube.com/vi/FzqWekWGaRg/0.jpg)](https://www.youtube.com/watch?v=FzqWekWGaRg)
