@@ -114,21 +114,23 @@ void loop() {
   // Calculating the distance
   distance = duration * 0.034 / 2;
   // Prints the distance on the Serial Monitor
-  Serial.print("Distance: ");
-  Serial.println(distance);
+  // Serial.print("Distance: ");
+  // Serial.println(distance);
 
 
   // reset fastest lap
   buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
+  // Serial.println(buttonState);
   if (buttonState == LOW) {
     fastestLap = "99:99:99:999";
     resetFastest = true;
+    Serial.println("RESET");
   }
 
 // check for if a car comes by
   if (distance <= 12) {
     totalTime = String((hh / 10) % 10) + String(hh % 10) + String(":") + String((mm / 10) % 10) + String(mm % 10) + String(":") + String((ss / 10) % 10) + String(ss % 10) + String(":") + String((ms / 100) % 10) + String((ms / 10) % 10) + String(ms % 10);
+    // Serial.println(totalTime);
     Serial.println(totalTime);
 
     char charBuf[13];
@@ -163,8 +165,8 @@ void loop() {
         }
         if (toke1.substring(0, 2).toInt() < toke2.substring(0, 2).toInt()) {
           fastestLap = totalTime;
-          Serial.println(toke1.substring(0, 2));
-          Serial.println(toke2.substring(0, 2));
+          // Serial.println(toke1.substring(0, 2));
+          // Serial.println(toke2.substring(0, 2));
         }
 
       } else {
@@ -173,8 +175,8 @@ void loop() {
         }
         if (toke1.substring(0, 3).toInt() < toke2.substring(0, 3).toInt()) {
           fastestLap = totalTime;
-          Serial.println(toke1.substring(0, 3));
-          Serial.println(toke2.substring(0, 3));
+          // Serial.println(toke1.substring(0, 3));
+          // Serial.println(toke2.substring(0, 3));
         }
       }
     }
