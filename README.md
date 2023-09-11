@@ -1,6 +1,6 @@
 # Arduino-Hot-Lap-Timer-for-Hotwheels-Tracks
 
-Ever wanted to find out how fast different diecasts stack up to each other in time attacks?
+Ever wanted to find out how fast different diecasts stack up to each other in time attacks? I did, so I made this
 
 This hot lap timer uses an ultrasonic sensor to read a passing car and record its laptimes. The LCD display display the current laptime and the fastest lap. The optional python script creates a .txt file that records every laptime as well as the average laptime.
 How to use:
