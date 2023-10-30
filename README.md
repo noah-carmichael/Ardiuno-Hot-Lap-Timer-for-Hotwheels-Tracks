@@ -30,4 +30,4 @@ Pushbutton
 
 Video of it in use:
 
-[![Link to youtube video](https://img.youtube.com/vi/FzqWekWGaRg/0.jpg)](https://www.youtube.com/watch?v=FzqWekWGaRg)
+[![Link to youtube video](https://img.youtube.com/vi/CE07UnDuNUc/0.jpg)](https://www.youtube.com/watch?v=CE07UnDuNUc)
